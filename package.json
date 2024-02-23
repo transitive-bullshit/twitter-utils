@@ -6,7 +6,7 @@
   "author": "Travis Fischer <travis@transitivebullsh.it>",
   "repository": {
     "type": "git",
-    "url": "transitive-bullshit/slay-the-spire"
+    "url": "transitive-bullshit/twitter-utils"
   },
   "packageManager": "pnpm@8.15.3",
   "engines": {
