@@ -1,0 +1,9 @@
+dist
+node_modules
+.env
+*.log
+.idea
+.vscode
+.DS_Store
+.tsimp
+out

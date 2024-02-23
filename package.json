@@ -1,0 +1,100 @@
+{
+  "name": "twitter-utils",
+  "description": "Twitter / tweet utils that I find myself reusing often.",
+  "license": "MIT",
+  "author": "Travis Fischer <travis@transitivebullsh.it>",
+  "repository": {
+    "type": "git",
+    "url": "transitive-bullshit/slay-the-spire"
+  },
+  "packageManager": "pnpm@8.15.3",
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "del dist",
+    "prebuild": "run-s clean",
+    "predev": "run-s clean",
+    "pretest": "run-s build",
+    "prepare": "husky install",
+    "test": "run-s test:*",
+    "test:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "test:format": "prettier --check \"**/*.{js,ts,tsx}\"",
+    "test:unit": "ava",
+    "test:typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "tiny-invariant": "^1.3.1",
+    "twitter-text": "^3.1.0",
+    "url-regex": "^5.0.0"
+  },
+  "devDependencies": {
+    "@dexaai/eslint-config": "^0.4.0",
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/node": "^20.11.19",
+    "@types/twitter-text": "^3.1.10",
+    "ava": "^6.1.1",
+    "del-cli": "^5.1.0",
+    "eslint": "^8.56.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.8.8",
+    "tsimp": "^2.0.11",
+    "tsup": "^8.0.2",
+    "tsx": "^4.7.1",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --ignore-unknown --write"
+    ]
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "nodeArguments": [
+      "--import=tsimp",
+      "--no-warnings=ExperimentalWarnings"
+    ]
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@dexaai/eslint-config",
+      "@dexaai/eslint-config/node"
+    ],
+    "ignorePatterns": [
+      "node_modules",
+      "dist",
+      ".next",
+      ".tsimp"
+    ],
+    "rules": {
+      "import/order": "off"
+    }
+  },
+  "keywords": [
+    "twitter",
+    "tweet",
+    "text",
+    "truncate",
+    "utils"
+  ]
+}
