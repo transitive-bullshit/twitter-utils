@@ -34,10 +34,10 @@
     "pretest": "run-s build",
     "prepare": "husky install",
     "test": "run-s test:*",
-    "test:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "test:format": "prettier --check \"**/*.{js,ts,tsx}\"",
-    "test:unit": "vitest run",
-    "test:typecheck": "tsc --noEmit"
+    "test:lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
+    "test:typecheck": "tsc --noEmit",
+    "test:unit": "vitest run"
   },
   "dependencies": {
     "tiny-invariant": "^1.3.1",

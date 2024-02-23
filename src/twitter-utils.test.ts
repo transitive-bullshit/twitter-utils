@@ -9,7 +9,7 @@ import {
   tweetIdComparator
 } from './twitter-utils.js'
 
-test('maxTwitterId', (t) => {
+test('maxTwitterId', () => {
   expect(maxTwitterId('123', '456')).toBe('456')
   expect(maxTwitterId('1230', '999')).toBe('1230')
   expect(maxTwitterId('', '999')).toBe('999')
@@ -20,7 +20,7 @@ test('maxTwitterId', (t) => {
   expect(maxTwitterId('948392', '948392')).toBe('948392')
 })
 
-test('minTwitterId', (t) => {
+test('minTwitterId', () => {
   expect(minTwitterId('123', '456')).toBe('123')
   expect(minTwitterId('1230', '999')).toBe('999')
   expect(minTwitterId('', '999')).toBe('999')
@@ -31,7 +31,7 @@ test('minTwitterId', (t) => {
   expect(minTwitterId('948392', '948392')).toBe('948392')
 })
 
-test('tweetIdComparator', (t) => {
+test('tweetIdComparator', () => {
   expect(tweetIdComparator('100', '0')).toBe(1)
   expect(tweetIdComparator('0', '100009898')).toBe(-1)
   expect(tweetIdComparator('100', '200')).toBe(-1)
@@ -43,7 +43,7 @@ test('tweetIdComparator', (t) => {
   expect(tweetIdComparator(undefined, undefined)).toBe(0)
 })
 
-test('tweetComparator', (t) => {
+test('tweetComparator', () => {
   expect(tweetComparator({ id: '100' }, { id: '200' })).toBe(-1)
   expect(tweetComparator({ id: '3000' }, { id: '999' })).toBe(1)
   expect(tweetComparator({ id: '3001' }, { id: '3001' })).toBe(0)
@@ -68,7 +68,7 @@ test('tweetComparator', (t) => {
   )
 })
 
-test('getTweetUrl', async (t) => {
+test('getTweetUrl', async () => {
   expect(
     getTweetUrl({ username: 'foo', id: '123' }),
     'https://twitter.com/foo/status/123'
@@ -85,7 +85,7 @@ test('getTweetUrl', async (t) => {
   expect(getTweetUrl({ username: '', id: '855' })).toBe(undefined)
 })
 
-test('sanitizeTweetText', async (t) => {
+test('sanitizeTweetText', async () => {
   expect(sanitizeTweetText('hello world')).toBe('hello world')
   expect(sanitizeTweetText('https://dexa.ai')).toBe('https://dexa.ai')
   expect(
