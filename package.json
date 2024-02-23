@@ -1,5 +1,6 @@
 {
   "name": "twitter-utils",
+  "version": "0.1.0",
   "description": "Twitter / tweet utils that I find myself reusing often.",
   "license": "MIT",
   "author": "Travis Fischer <travis@transitivebullsh.it>",
