@@ -11,9 +11,6 @@ dependencies:
   twitter-text:
     specifier: ^3.1.0
     version: 3.1.0
-  type-fest:
-    specifier: ^4.10.2
-    version: 4.10.2
   url-regex:
     specifier: ^5.0.0
     version: 5.0.0
@@ -4987,11 +4984,6 @@ packages:
     resolution: {integrity: sha512-tLq3bSNx+xSpwvAJnzrK0Ep5CLNWjvFTOp71URMaAEWBfRb9nnJiBoUe0tF8bI4ZFO3omgBR6NvnbzVUT3Ly4g==}
     engines: {node: '>=14.16'}
     dev: true
-
-  /type-fest@4.10.2:
-    resolution: {integrity: sha512-anpAG63wSpdEbLwOqH8L84urkL6PiVIov3EMmgIhhThevh9aiMQov+6Btx0wldNcvm4wV+e2/Rt1QdDwKHFbHw==}
-    engines: {node: '>=16'}
-    dev: false
 
   /typed-array-buffer@1.0.2:
     resolution: {integrity: sha512-gEymJYKZtKXzzBzM4jqa9w6Q1Jjm7x2d+sh19AdsD4wqnMPDYyvwpsIc2Q/835kHuo3BEQ7CjelGhfTsoBb2MQ==}
