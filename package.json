@@ -40,14 +40,14 @@
     "test:unit": "vitest run"
   },
   "dependencies": {
-    "tiny-invariant": "^1.3.1",
+    "tiny-invariant": "^1.3.3",
     "twitter-text": "^3.1.0",
     "url-regex": "^5.0.0"
   },
   "devDependencies": {
-    "@dexaai/eslint-config": "^0.4.0",
+    "@dexaai/eslint-config": "^1.3.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
-    "@types/node": "^20.11.19",
+    "@types/node": "^20.12.12",
     "@types/twitter-text": "^3.1.10",
     "del-cli": "^5.1.0",
     "eslint": "^8.56.0",
@@ -56,9 +56,9 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.8",
     "tsup": "^8.0.2",
-    "tsx": "^4.7.1",
-    "typescript": "^5.3.3",
-    "vitest": "^1.3.1"
+    "tsx": "^4.10.3",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   },
   "lint-staged": {
     "*.{ts,tsx}": [
