@@ -85,31 +85,35 @@ test('getTweetUrl', async () => {
   expect(getTweetUrl({ username: '', id: '855' })).toBe(undefined)
 })
 
-test('sanitizeTweetText', async () => {
+test.only('sanitizeTweetText', async () => {
+  expect(
+    sanitizeTweetText(`Lex Fridman and Guillaume Verdon discussed key topics on the Lex Fridman Podcast including:
+• AI's development as an evolutionary process akin to animal domestication.
+• The integration of quantum computing with deep learning via TensorFlow Quantum.
+• Continuous yada
+https://example.com`)
+  ).toMatchSnapshot()
+
   expect(sanitizeTweetText('hello world')).toBe('hello world')
   expect(sanitizeTweetText('https://dexa.ai')).toBe('https://dexa.ai')
   expect(
     sanitizeTweetText(
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum'
     )
-  ).toBe(
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in vo...'
-  )
+  ).toMatchSnapshot()
   expect(
     sanitizeTweetText(
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum https://example.com/foo/bar'
     )
-  ).toBe(
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor... https://example.com/foo/bar'
-  )
+  ).toMatchSnapshot()
   expect(
     sanitizeTweetText(
       'Lorem ipsum dolor sit amet, https://nala.ai/test consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum https://example.com/foo/bar'
     )
-  ).toBe(
-    'Lorem ipsum dolor sit amet, https://nala.ai/test consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa... https://example.com/foo/bar'
-  )
+  ).toMatchSnapshot()
+})
 
+test('sanitizeTweetText invalid', async () => {
   assert.throws(() => sanitizeTweetText(''))
   assert.throws(() => sanitizeTweetText('  '))
   assert.throws(() => sanitizeTweetText('\n \n'))

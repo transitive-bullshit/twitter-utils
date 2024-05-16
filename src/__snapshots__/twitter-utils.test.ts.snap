@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`sanitizeTweetText 1`] = `
+"Lex Fridman and Guillaume Verdon discussed key topics on the Lex Fridman Podcast including:
+• AI's development as an evolutionary process akin to animal domestication.
+• The integration of quantum computing with deep learning via TensorFlow Quantum... https://example.com"
+`;
+
+exports[`sanitizeTweetText 2`] = `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit..."`;
+
+exports[`sanitizeTweetText 3`] = `"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure... https://example.com/foo/bar"`;
+
+exports[`sanitizeTweetText 4`] = `"Lorem ipsum dolor sit amet, https://nala.ai/test consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con... https://example.com/foo/bar"`;

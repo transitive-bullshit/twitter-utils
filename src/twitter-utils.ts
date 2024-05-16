@@ -118,7 +118,10 @@ export function getTweetUrl({
  */
 export function sanitizeTweetText(
   text: string,
-  { label = '' }: { label?: string } = {}
+  {
+    label = '',
+    maxTweetLength = 275
+  }: { label?: string; maxTweetLength?: number } = {}
 ): string {
   text = text.trim()
 
@@ -132,7 +135,6 @@ export function sanitizeTweetText(
     })
   }
 
-  const maxTweetLength = 280
   const twitterUrlCharacterCount = 23
 
   // Temporarily remove URLs so we can properly truncate the text
@@ -172,6 +174,7 @@ export function sanitizeTweetText(
   }
 
   text = text.trim()
+  // console.log('\n\n' + text + '\n\n')
 
   if (!twitterText.isInvalidTweet(text)) {
     return text
