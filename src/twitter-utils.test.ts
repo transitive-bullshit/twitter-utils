@@ -85,7 +85,7 @@ test('getTweetUrl', async () => {
   expect(getTweetUrl({ username: '', id: '855' })).toBe(undefined)
 })
 
-test.only('sanitizeTweetText', async () => {
+test('sanitizeTweetText', async () => {
   expect(
     sanitizeTweetText(`Lex Fridman and Guillaume Verdon discussed key topics on the Lex Fridman Podcast including:
 • AI's development as an evolutionary process akin to animal domestication.
